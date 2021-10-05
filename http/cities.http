@@ -1,0 +1,33 @@
+###Listar todas las ciudades (originalmente son 600)
+GET http://localhost:8080/cities
+Accept: application/json
+
+###Añadir una nueva ciudad (si es la primera vez que se añade, será city_id = 601
+###Si ya se añadio una ciudad pasará a ser 602, 603, 604... etc)
+POST http://localhost:8080/cities
+Content-Type: application/json
+
+{
+    "city": "La Paz", 
+    "country_id": "9" 
+}
+
+###Buscar una ciudad especifica, por city_id(si es la primera vez que se añade, 
+###será city_id = 601)
+GET http://localhost:8080/cities/601
+Accept: application/json
+
+###Listar todas las ciudades por city (originalmente son 600)
+GET http://localhost:8080/cities?sort=city
+Accept: application/json
+
+###Actualizar una ciudad (si es la primera vez que se añade, será city_id = 601)
+PUT http://localhost:8080/cities/601
+Content-Type: application/json
+
+{
+    "city": "Nuestra Señora de La Paz",
+    "country_id": "10" 
+}
+###Borrar una ciudad (si es la primera vez que se añade, será city_id = 601)
+DELETE http://localhost:8080/cities/601
